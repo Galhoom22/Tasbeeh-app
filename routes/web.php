@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\TasbeehController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TasbeehController::class, 'index'])->name('tasbeeh.index');

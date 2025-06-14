@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('tasbeehs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('count')->default(0);
+            $table->integer('total_count')->default(0);
             $table->timestamps();
         });
     }
