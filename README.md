@@ -59,3 +59,21 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## ⏰ Daily Reset Command
+To enable the automatic daily reset, follow these two steps:
+
+### Step 1: Register the Command in Laravel
+Open the `app/Console/Kernel.php` file.
+
+Add the following line inside the `schedule` method:
+
+```php
+$schedule->command('app:reset-daily-count')->daily();
+```
+### Step 2: Set Up the Cron Job on Your Server
+Add the following entry to your server's crontab to run the Laravel scheduler every minute.
+
+Remember to replace /path-to-your-project with the actual path to your project directory.
+
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
