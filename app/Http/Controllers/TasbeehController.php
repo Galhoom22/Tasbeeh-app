@@ -29,4 +29,10 @@ class TasbeehController extends Controller
 
         return redirect()->route('tasbeeh.index')->with('success', 'تمت إضافة التسبيحة بنجاح!');
     }
+    public function increment($id){
+        $tasbeeh = Tasbeeh::findOrFail($id);
+        $tasbeeh->increment('count');
+        $tasbeeh->increment('total_count');
+        return redirect()->route('tasbeeh.index');
+    }
 }

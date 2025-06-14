@@ -19,6 +19,7 @@
                 <th>التسبيح</th>
                 <th>العدد الحالي</th>
                 <th>إجمالي العدد</th>
+                <th>عمليات</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,12 @@
                     <td>{{ $tasbeeh->name }}</td>
                     <td>{{ $tasbeeh->count }}</td>
                     <td>{{ $tasbeeh->total_count }}</td>
+                    <td>
+                        <form method="POST" action="{{ route('tasbeeh.increment', $tasbeeh->id) }}" style="display:inline-block;">
+                            @csrf
+                            <button type="submit" class="btn btn-success btn-sm">+</button>
+                        </form>
+                    </td>
                 </tr>
             @empty
                 <tr>
