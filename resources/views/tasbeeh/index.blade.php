@@ -8,6 +8,9 @@
 </head>
 
 <body dir="rtl" class="container mt-5">
+    @if (session('success'))
+        <div class="alert alert-success">{{session('success')}}</div>
+    @endif
     <h2 class="mb-4 text-center">🕋 قائمة التسبيحات</h2>
     <table class="table table-striped table-bordered table-hover text-center table-responsive">
         <thead class="table-dark">
