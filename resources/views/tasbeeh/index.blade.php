@@ -12,7 +12,11 @@
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <h2 class="mb-4 text-center">🕋 قائمة التسبيحات</h2>
-    
+    <div class="text-center mb-4">
+        <a href="{{ route('tasbeeh.create') }}" class="btn btn-primary">
+            ➕ إضافة تسبيحة جديدة
+        </a>
+    </div>
     <table class="table table-striped table-bordered table-hover text-center table-responsive">
         <thead class="table-dark">
             <tr>
