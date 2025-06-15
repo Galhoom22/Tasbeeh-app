@@ -12,6 +12,7 @@
         <div class="alert alert-success">{{session('success')}}</div>
     @endif
     <h2 class="mb-4 text-center">🕋 قائمة التسبيحات</h2>
+    
     <table class="table table-striped table-bordered table-hover text-center table-responsive">
         <thead class="table-dark">
             <tr>
@@ -19,7 +20,8 @@
                 <th>التسبيح</th>
                 <th>العدد الحالي</th>
                 <th>إجمالي العدد</th>
-                <th>عمليات</th>
+                <th>الزيادة</th>
+                <th>الحذف</th>
             </tr>
         </thead>
         <tbody>
@@ -35,10 +37,13 @@
                             <button type="submit" class="btn btn-success btn-sm">+</button>
                         </form>
                     </td>
+                    <td>
+                        @include('tasbeeh.delete_button', ['tasbeeh' => $tasbeeh])
+                    </td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="4">لا يوجد تسبيحات بعد</td>
+                    <td colspan="6">لا يوجد تسبيحات بعد</td>
                 </tr>
             @endforelse
         </tbody>

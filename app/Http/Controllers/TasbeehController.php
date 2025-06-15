@@ -35,4 +35,9 @@ class TasbeehController extends Controller
         $tasbeeh->increment('total_count');
         return redirect()->route('tasbeeh.index');
     }
+    public function destroy($id){
+        $tasbeeh = Tasbeeh::findOrFail($id);
+        $tasbeeh->delete();
+        return redirect()->route('tasbeeh.index')->with('success', 'تم حذف التسبيحة بنجاح');
+    }
 }
